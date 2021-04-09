@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    Padding: 0;
+
+}
+
+body
+{
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+
+    background-image: url(../images/CourbeBon.png); 
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    min-height: 100vh; /* garde l'image fixe dans le background*/
+}
+
+img
+{
+    width: 100%; /* les images global du doc deviennent responsive */
+}
+
+main 
+{
+    display: flex;
+
+   /*  border: 3px solid orange; */
+}
+
+.TitresManeges{
+
+    flex: 0 1 25vw; /* ne redimensionne pas*/
+    margin: 1.5em 1.2em; /* établit les marges du div qui reste les mêmes*/ 
+    max-width: 250px; /* la largeur du div reste fiche */
+    
+    
+}
+
+.TitresManeges p
+{
+    margin-top: 2em;
+    font-size: 1em;
+    
+}
+
+.TitresManeges h1
+{
+    font-size: 45px;
+    color:#292469;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+
+.Caroussel
+
+{
+    flex: 1 1 auto; /* agrandi et retrecit */
+ /*    border: 4px solid purple; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: 
+        "image1 image2 image3"
+        "fleches fleches fleches"
+    ;
+}
+
+.Caroussel div
+{
+    text-align: center; /* img src par defaut display inline 
+    img agit comme le text*/
+}
+
+.Caroussel .Image1{
+
+    grid-area: image1;
+    /* border: 4px solid green; */
+}
+
+
+.Caroussel .Image2
+{
+    
+    grid-area: image2;
+  /*   border: 2px solid yellowgreen; */
+    align-self: center;
+}
+
+.Caroussel .Image3{
+    grid-area: image3;
+    align-self: center;
+   /*  border: 2px solid yellowgreen; */
+}
+
+.Caroussel .Image1 img, .Caroussel .Image3 img {width: 50%;} /*image 2 plus petite que la premiere*/
+
+
+
+
+
+/******  ***** ***** MEDIA QUERIES  MOBILE***** ***** ***** ***** ***** ***********/
+@media (max-width:600px){
+
+    .TitresManeges{
+
+        flex: 1 1 25vw; /* ne redimensionne pas*/
+       /*  margin: 1.5em 1.2em; */ /* établit les marges du div qui reste les mêmes*/ 
+        max-width: 250px; /* la largeur du div reste fiche */
+        
+    }
+
+   
+}

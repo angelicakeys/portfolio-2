@@ -1,0 +1,229 @@
+
+
+header
+{
+   
+ /*    border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+header div.logo { flex : 0 0 auto;}
+header nav{ flex : 1 0 auto;}
+
+
+
+.logo img{
+    width: 15vw;
+    min-width: 150px;
+}
+
+.menu
+{
+    background-color: #555EA3;
+    display: block;
+    
+}
+
+.menu ul 
+{
+display:flex;
+list-style-type: none;
+justify-content: space-around;
+align-items: center; 
+min-height: 10em;
+align-items: center;
+    
+}
+
+ul li
+{
+   color: white; 
+  
+}
+
+ul li:hover
+{
+    text-align: center;
+}
+
+
+.actif
+{
+    
+color:red;
+
+}
+.menu a
+{
+    display: block;
+    text-align: center;
+    color:white;
+    text-decoration:none;
+   /*  border:2px solid blue; */
+
+}
+
+a.boutonNormal
+{
+    background-image: url(../images/boutonNormal.png);
+    background-repeat: no-repeat;
+    background-position:center;
+
+    display: block;
+   min-height: 75px; 
+    min-width: 50px;
+   
+}
+
+
+
+a.boutonNormal:hover
+{
+    background-image: url(../images/boutonSurvol.png);
+    background-repeat: no-repeat;
+    
+    display: block;
+    min-height: 95px; 
+     min-width: 100px;
+    
+}
+
+/***** MENU BURGER ***********************************************/
+
+.navigation
+{
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw; 
+}
+
+#burger
+{
+    display: flex;
+    cursor: pointer;
+    justify-content:flex-end;
+    position: absolute;
+    z-index: 2;
+    margin-top:1.5em;
+    right:80px;
+   
+}
+#toggle
+{
+
+    display: none;
+}
+
+#toggle:not(:checked) ~ .menu 
+{
+    flex:1;
+    
+}
+
+label
+{
+    
+   float: right;
+   font-size:3em;
+   color:red;
+      
+}
+
+#toggle ~ .menu 
+{
+    transform: translateY(-110%);
+    transition: 1s;
+}
+
+#toggle:checked  ~ .menu 
+{
+    transform: translateY(0%);
+    height: 80vh;
+    position:absolute;
+    width: 75%;
+    padding-top: 50px;
+   /*  padding-bottom: 150px; */
+
+}
+
+#toggle:checked  ~ .menu ul{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+}
+
+#toggle:checked  ~ #burger{
+
+    right:30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/***** MOBILE & TABLET ***************************************************/
+ @media all and (min-width: 600px) and (min-width:834px)
+ 
+ {
+
+
+    .menu
+    {
+        transform: translate(100%);
+    }
+
+    .menu a
+    {
+        display: block;
+        
+    }
+
+    #toggle
+    {
+     display: none;
+  
+    
+    }
+    
+    #burger
+    {
+        display: none;
+    }
+    
+    label{
+        float: right;
+        font-size:3em;
+        color:red;
+       
+    }
+
+
+    #toggle:checked + .menu {
+        display: block;
+    }
+
+
+  /* Permet de voir la barre de nav sans le burger menu*/
+  #toggle:not(:checked) ~ .menu {
+    transform: translateY(0%);
+
+    
+}
+
+
+
+
+
+}
